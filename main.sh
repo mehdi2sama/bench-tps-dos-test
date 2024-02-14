@@ -30,7 +30,7 @@ for sship in "${instance_ip[@]}"
 do
     # run start-dos-test.sh which in client machine
     ret_run_dos=$(ssh -i id_ed25519_dos_test -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" sol@$sship "nohup /home/sol/start-dos-test.sh  1> start-dos-test.nohup 2> start-dos-test.nohup &")
-    (( client_num++ )) || true 
+    (( client_num++ )) || false
 done
 # # Get Time Start
 start_time=$(date -u +%s)
